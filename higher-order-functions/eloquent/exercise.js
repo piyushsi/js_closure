@@ -1,11 +1,22 @@
 // Challenge 1. Flattening
 let arrays = [[1, 2, 3], [4, 5], [6]];
+var arr=arrays.flat()
 
 // Your code here.
 // → [1, 2, 3, 4, 5, 6]
 
 // Challenge 2. Your own loop
 // Your code here.
+function loop(v,c,f,p){
+	window.setInterval(function piyush(){
+ if(c(v)){ p(v); v=f(v);
+ }
+ else {
+clearInterval()
+ }
+}, 0);}
+or 
+function loop(v,c,f,p){ while(c(v)){ p(v); v=f(v);}}
 
 loop(3, n => n > 0, n => n - 1, console.log);
 // → 3
@@ -14,7 +25,19 @@ loop(3, n => n > 0, n => n - 1, console.log);
 
 // Challenge 3. Everything
 function every(array, test) {
-  // Your code here.
+  var a;
+  array.forEach(v=>{
+  	if (test(v)){
+  		a=true
+  	}
+  	else if(test(undefined)) {
+  		a=true
+  	}
+  	else{
+  		a=false
+  	}
+  }) 
+  return a
 }
 
 console.log(every([1, 3, 5], n => n < 10));
